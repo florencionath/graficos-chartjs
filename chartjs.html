@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Implemrntando o chartjs</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+     <style>
+      body{
+        width: 60%;
+       height: 30%;
+      }
+      
+     </style>
+</head >
+<body>
+    
+    <div>
+        <canvas style="background-color:rgb(0, 24, 0, 0.778); margin-bottom: 10px;" id="myChart"></canvas>
+      </div>
+
+      <div>
+        <canvas style="background-color:rgb(0, 24, 0, 0.778);" id="myChart2"></canvas>
+      </div>
+
+</body>
+
+<script>
+    const ctx = document.getElementById('myChart');
+    const ctx2 = document.getElementById('myChart2');
+  
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['12:00', '13:00', '14:00', '15:00', '16:00', '17:00'],
+        datasets: [{
+          label: ' Temperatura',
+          backgroundColor: ('#ff0000'),
+          data: [30, 29, 28, 25, 22, 23],
+          borderColor: ('#ff0000'),
+
+          borderWidth: 1
+        }, {
+          label: ' Umidade',
+          backgroundColor: ('#ffffff'),
+          data: [80, 82, 80, 85, 80, 83],
+          pointBackgroundColor: ('#ffffff'),
+          borderColor: ('#ffffff'),
+          borderWidth: 1
+        }
+      ]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+
+    new Chart(ctx2, {
+      type: 'bar',
+      data: {
+        labels: ['12:00', '13:00', '14:00', '15:00', '16:00', '17:00'],
+        datasets: [{
+          label: ' Temperatura',
+          backgroundColor: ('#ff0000'),
+          data: [30, 29, 28, 25, 22, 23],
+          borderColor: ('#ff0000'),
+
+          borderWidth: 1
+        }, {
+          label: ' Umidade',
+          backgroundColor: ('#ffffff'),
+          data: [80, 82, 80, 85, 80, 83],
+          pointBackgroundColor: ('#ffffff'),
+          borderColor: ('#ffffff'),
+          borderWidth: 1
+        }
+      ]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  </script>
+
+
+
+</html>
+
+<!-- <script>
+    //Vetores com texto, const quando é declarada nunca mais muda
+    const labels = [
+        'January', // esses textos vão ser usados para fazer a dimensão do gráfico
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+    ];
+
+
+    // const nã é apenas um vetos, ela é um jason
+    const data = {
+        labels: labels, // chama os valores da const label 
+        datasets: [{ // é um vetor com jason dentro. São as métricas a linha do gráfico
+            label: 'My first dataset',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: [0, 10, 2, 20, 30, 45],
+        }]
+    };
+
+    const config = {
+        type: 'line',
+        data: data,
+        options: {}
+    };
+</script>
+
+<script>
+    const myChart = Chart(
+        document.getElementById('myChart'),
+        config
+    );
+</script> -->
